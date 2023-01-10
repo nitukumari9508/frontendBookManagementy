@@ -1,8 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+
 import reportWebVitals from './reportWebVitals';
+
+
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+        <Route path="/signup">
+          <SignUpPage />
+        </Route>
+        <Route path="/books">
+          <BookListPage />
+        </Route>
+        <Route path="/books/:id">
+          <BookDetailPage />
+        </Route>
+        <Route path="/books/:id/edit">
+          <BookEditPage />
+        </Route>
+        <Route path="/books/create">
+          <BookCreatePage />
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
